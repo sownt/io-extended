@@ -1,10 +1,21 @@
+'use client';
 import Image from 'next/image';
-import logo from '../public/logo.png';
-import logo_white from '../public/logo_white.png';
-import hero from '../public/home_hero.svg';
-import Link from 'next/link';
-import { TicketIcon } from '@heroicons/react/24/solid';
+import {
+  CalendarDaysIcon,
+  ClockIcon,
+  MapPinIcon,
+  TicketIcon,
+} from '@heroicons/react/24/solid';
 import Button from '@/components/button/Button';
+import logo from '@/public/logo.png';
+import logo_white from '@/public/logo_white.png';
+import hero from '@/public/hero/home_hero.svg';
+import hero_dark from '@/public/hero/home_hero_dark.svg';
+import hero_mobile from '@/public/hero/home_hero_mobile.svg';
+import hero_mobile_dark from '@/public/hero/home_hero_mobile_dark.svg';
+import googlefordevelopers from '@/public/googlefordevelopers.svg';
+import MobileNavBar from '@/components/navbar/MobileNavBar';
+import Link from 'next/link';
 
 export default function Home() {
   return (
@@ -13,50 +24,54 @@ export default function Home() {
       <div className="inset-x-0 top-0 max-lg:hidden dark:text-white">
         <nav className="mx-auto max-w-6xl px-4 flex flex-1 items-center gap-8 py-2.5">
           <span className="relative">
-            <Image className="dark:hidden w-64" src={logo} alt="Google I/O" />
+            <Image
+              className="dark:hidden w-64"
+              src={logo}
+              alt="Google I/O Extended Cloud Hanoi 2024"
+            />
             <Image
               className="hidden dark:inline w-64"
               src={logo_white}
-              alt="Google I/O"
+              alt="Google I/O Extended Cloud Hanoi 2024"
             />
           </span>
           <div className="max-lg:hidden h-6 w-px bg-zinc-950/10 dark:bg-white/10"></div>
           <div className="max-lg:hidden flex items-center gap-8">
-            <span className="relative">
+            {/* <span className="relative">
               <Link href="#">Explore</Link>
             </span>
-            <span className="relative">Community</span>
-            <span className="relative">About</span>
+            <span className="relative">
+              <Link href="#">Community</Link>
+            </span>
+            <span className="relative">
+              <Link href="#">About</Link>
+            </span> */}
           </div>
           <div className="-ml-4 flex-1"></div>
           <div className="flex items-center">
             <Button>
               <TicketIcon />
-              Register
+              Đăng ký
             </Button>
           </div>
         </nav>
       </div>
       {/* Mobile Nav */}
-      <header className="flex items-center px-4 lg:hidden"></header>
+      <MobileNavBar />
       {/* Body */}
-      <main className="mx-auto max-w-6xl">
-        <div className="w-full flex flex-col md:flex-row overflow-hidden bg-grey-bg dark:bg-grey border-b-[1px] md:border-b-2 border-grey dark:border-grey-bg">
-          <div className="flex flex-col md:justify-center px-4 py-5 w-full md:w-2/5 md:p-10 md:pr-0 dark:text-white z-10 text-center md:text-left items-center md:items-start">
-            <h1 className="text-6xl font-black mb-4 sm:s-h3 md:l-h1-2">
-              Lorem Ipsum
+      <main>
+        {/* Hero Section */}
+        <div className="mx-auto max-w-6xl flex flex-col md:flex-row overflow-hidden bg-grey-bg dark:bg-grey border-b-[1px] md:border-b-2 border-grey dark:border-grey-bg">
+          <div className="flex flex-col md:justify-center px-8 py-5 w-full md:w-2/5 md:p-10 md:pr-0 dark:text-white z-10 text-center md:text-left items-center md:items-start">
+            <h1 className="text-2xl sm:text-4xl font-black mb-4 sm:s-h3 md:l-h1-2">
+              Cùng cập nhật những công nghệ mới nhất về Cloud, AI và ML từ Google I/O
             </h1>
             <p className="font-normal text-justify sm:s-h6 md:l-h6 mb-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur
-              placerat dolor eget metus dictum congue. Suspendisse ac ultricies
-              lacus. Vestibulum posuere mattis est eget sodales. Etiam in
-              imperdiet nulla. Mauris vel maximus lectus. Aliquam in nibh sed
-              lorem ornare elementum eu sed purus. Maecenas quis dolor ac nisl
-              aliquet ultricies.
+              Tại sự kiện Google I/O Extended Cloud Hanoi 2024, phiên bản mở rộng của sự kiện Google I/O dành cho các lập trình viên và những người yêu thích công nghệ tại Việt Nam.
             </p>
             <Button>
               <TicketIcon />
-              Register
+              Đăng ký ngay
             </Button>
           </div>
           <div className="flex justify-end items-end w-full md:w-3/5 mt-[-55px] md:mt-[60px]">
@@ -65,9 +80,123 @@ export default function Home() {
               alt="Hero image"
               className="hidden md:inline-block h-full object-cover object-left dark:hidden ml:pr-4"
             />
+            <Image
+              src={hero_dark}
+              alt="Hero image"
+              className="hidden dark:md:inline-block h-full object-cover object-left ml:pr-4"
+            />
+            <Image
+              src={hero_mobile}
+              alt="Hero image"
+              className="block md:hidden dark:hidden w-full mt-[60px]"
+            />
+            <Image
+              src={hero_mobile_dark}
+              alt="Hero image"
+              className="hidden dark:inline-block dark:md:hidden w-full mt-[60px]"
+            />
+          </div>
+        </div>
+        {/* End Hero Section */}
+        <div className="rounded-4xl bg-neutral-950 py-20 sm:py-32">
+          <div className="mx-auto max-w-6xl px-8">
+            <div className="flex items-center gap-x-8">
+              <h2 className="text-center font-display text-sm font-semibold tracking-wider text-white sm:text-left">
+                Đồng hành cùng chúng tôi
+              </h2>
+              <div className="h-px flex-auto bg-neutral-800"></div>
+            </div>
+            <div>
+              <ul className="mt-10 grid grid-cols-2 gap-x-8 gap-y-10 lg:grid-cols-4">
+                {Array.from({ length: 8 }, (_, i) => (
+                  <li key={i}>
+                    <span className="relative">
+                      <Image
+                        className="dark:hidden w-64"
+                        src={logo_white}
+                        alt="Google I/O Extended Cloud Hanoi 2024"
+                      />
+                      <Image
+                        className="hidden dark:inline w-64"
+                        src={logo}
+                        alt="Google I/O Extended Cloud Hanoi 2024"
+                      />
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="mx-auto max-w-6xl px-8 mt-24 sm:mt-32 lg:mt-40">
+          <h2>
+            <span className="block font-display tracking-tight [text-wrap:balance] text-4xl font-medium sm:text-5xl text-neutral-950">
+              Hẹn gặp bạn
+            </span>
+          </h2>
+          <div className="mt-6 text-xl text-neutral-600">
+            <p>cùng với gần 400 thành viên tham dự</p>
+          </div>
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 mt-16">
+            <div className="flex">
+              <article className="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 sm:p-8">
+                <MapPinIcon className="w-8" />
+                <p className="mt-6 font-display text-2xl font-semibold text-neutral-950">
+                  Hội trường A2, Học viện Công nghệ Bưu chính viễn thông
+                </p>
+                <p className="mt-4 text-base text-neutral-600">
+                  Km 10 đường Nguyễn Trãi, P.Mộ Lao, Q.Hà Đông, Hà Nội
+                </p>
+              </article>
+            </div>
+            <div className="flex">
+              <article className="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 sm:p-8">
+                <ClockIcon className="w-8" />
+                <p className="mt-6 font-display text-2xl font-semibold text-neutral-950">
+                  13:00
+                </p>
+                <p className="mt-4 text-base text-neutral-600">
+                  Nhớ đến sớm để nhận những phần quà hấp dẫn từ BTC
+                </p>
+              </article>
+            </div>
+            <div className="flex">
+              <article className="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 sm:p-8">
+                <CalendarDaysIcon className="w-8" />
+                <p className="mt-6 font-display text-2xl font-semibold text-neutral-950">
+                  Thứ bảy, 27 tháng 7
+                </p>
+                <p className="mt-4 text-base text-neutral-600">
+                  Thêm ngay vào Calendar để không bỏ lỡ nhau nhé
+                </p>
+              </article>
+            </div>
           </div>
         </div>
       </main>
+      <footer className="mt-24 sm:mt-32 lg:mt-40 pt-10 pb-16 lg:py-10 px-7 lg:px-16 bg-black flex flex-col lg:flex-row lg:justify-between lg:items-center w-max-full">
+        <div className="flex flex-col lg:flex-row items-start lg:items-center space-y-6 lg:space-y-0 lg:space-x-6 text-grey-500 text-[16px] font-medium flex-1">
+          <div className="text-2xl font-semibold lg:mr-6 text-grey-500 flex justify-between w-full mb-4 lg:mb-0 lg:w-auto items-center">
+            <Image
+              className="w-32"
+              src={googlefordevelopers}
+              alt="Google for Developers"
+            />
+          </div>
+        </div>
+        <div className="flex lg:justify-self-end lg:justify-end mt-12 lg:mt-0 text-slate-200">
+          <Link href="#" className="p-3">
+            Facebook
+          </Link>
+          <Link href="#" className="p-3">
+            LinkedIn
+          </Link>
+          <Link href="#" className="p-3">
+            Youtube
+          </Link>
+        </div>
+      </footer>
     </div>
   );
 }
