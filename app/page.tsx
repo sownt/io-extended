@@ -35,7 +35,7 @@ export default function Home() {
               alt="Google I/O Extended Cloud Hanoi 2024"
             />
           </span>
-          <div className="max-lg:hidden h-6 w-px bg-zinc-950/10 dark:bg-white/10"></div>
+          {/* <div className="max-lg:hidden h-6 w-px bg-zinc-950/10 dark:bg-white/10"></div> */}
           <div className="max-lg:hidden flex items-center gap-8">
             {/* <span className="relative">
               <Link href="#">Explore</Link>
@@ -63,7 +63,7 @@ export default function Home() {
         {/* Hero Section */}
         <div className="mx-auto max-w-6xl flex flex-col md:flex-row overflow-hidden bg-grey-bg dark:bg-grey border-b-[1px] md:border-b-2 border-grey dark:border-grey-bg">
           <div className="flex flex-col md:justify-center px-8 py-5 w-full md:w-2/5 md:p-10 md:pr-0 dark:text-white z-10 text-center md:text-left items-center md:items-start">
-            <h1 className="text-2xl sm:text-4xl font-black mb-4 sm:s-h3 md:l-h1-2">
+            <h1 className="text-2xl sm:text-4xl font-semibold mb-4 sm:s-h3 md:l-h1-2">
               Cùng cập nhật những công nghệ mới nhất về Cloud, AI và ML từ Google I/O
             </h1>
             <p className="font-normal text-justify sm:s-h6 md:l-h6 mb-4">
@@ -98,10 +98,10 @@ export default function Home() {
           </div>
         </div>
         {/* End Hero Section */}
-        <div className="rounded-4xl bg-neutral-950 py-20 sm:py-32">
+        <div className="rounded-4xl bg-neutral-950 dark:bg-slate-50 py-20 sm:py-32">
           <div className="mx-auto max-w-6xl px-8">
             <div className="flex items-center gap-x-8">
-              <h2 className="text-center font-display text-sm font-semibold tracking-wider text-white sm:text-left">
+              <h2 className="text-center font-display text-sm font-semibold tracking-wider text-white dark:text-zinc-900 sm:text-left">
                 Đồng hành cùng chúng tôi
               </h2>
               <div className="h-px flex-auto bg-neutral-800"></div>
@@ -129,45 +129,45 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="mx-auto max-w-6xl px-8 mt-24 sm:mt-32 lg:mt-40">
+        <div className="mx-auto max-w-6xl px-8 mt-24 sm:mt-32 lg:mt-40 text-neutral-950 dark:text-gray-50">
           <h2>
-            <span className="block font-display tracking-tight [text-wrap:balance] text-4xl font-medium sm:text-5xl text-neutral-950">
+            <span className="block font-display tracking-tight [text-wrap:balance] text-4xl font-medium sm:text-5xl">
               Hẹn gặp bạn
             </span>
           </h2>
-          <div className="mt-6 text-xl text-neutral-600">
+          <div className="mt-6 text-xl">
             <p>cùng với gần 400 thành viên tham dự</p>
           </div>
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 mt-16">
             <div className="flex">
-              <article className="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 sm:p-8">
+              <article className="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition bg-neutral-50 hover:bg-white dark:bg-zinc-900 dark:hover:bg-zinc-800 sm:p-8">
                 <MapPinIcon className="w-8" />
-                <p className="mt-6 font-display text-2xl font-semibold text-neutral-950">
+                <p className="mt-6 font-display text-2xl font-semibold ">
                   Hội trường A2, Học viện Công nghệ Bưu chính viễn thông
                 </p>
-                <p className="mt-4 text-base text-neutral-600">
+                <p className="mt-4 text-base">
                   Km 10 đường Nguyễn Trãi, P.Mộ Lao, Q.Hà Đông, Hà Nội
                 </p>
               </article>
             </div>
             <div className="flex">
-              <article className="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 sm:p-8">
+              <article className="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition bg-neutral-50 hover:bg-white dark:bg-zinc-900 dark:hover:bg-zinc-800 sm:p-8">
                 <ClockIcon className="w-8" />
-                <p className="mt-6 font-display text-2xl font-semibold text-neutral-950">
+                <p className="mt-6 font-display text-2xl font-semibold">
                   13:00
                 </p>
-                <p className="mt-4 text-base text-neutral-600">
+                <p className="mt-4 text-base">
                   Nhớ đến sớm để nhận những phần quà hấp dẫn từ BTC
                 </p>
               </article>
             </div>
             <div className="flex">
-              <article className="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition hover:bg-neutral-50 sm:p-8">
+              <article className="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition bg-neutral-50 hover:bg-white dark:bg-zinc-900 dark:hover:bg-zinc-800 sm:p-8">
                 <CalendarDaysIcon className="w-8" />
-                <p className="mt-6 font-display text-2xl font-semibold text-neutral-950">
+                <p className="mt-6 font-display text-2xl font-semibold">
                   Thứ bảy, 27 tháng 7
                 </p>
-                <p className="mt-4 text-base text-neutral-600">
+                <p className="mt-4 text-base">
                   Thêm ngay vào Calendar để không bỏ lỡ nhau nhé
                 </p>
               </article>
