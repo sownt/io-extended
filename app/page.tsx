@@ -16,6 +16,7 @@ import hero_mobile_dark from '@/public/hero/home_hero_mobile_dark.svg';
 import googlefordevelopers from '@/public/googlefordevelopers.svg';
 import MobileNavBar from '@/components/navbar/MobileNavBar';
 import Link from 'next/link';
+import ThemeSwitcher from '@/components/ThemeSwitcher';
 
 export default function Home() {
   return (
@@ -23,36 +24,41 @@ export default function Home() {
       {/* Nav */}
       <div className="inset-x-0 top-0 max-lg:hidden dark:text-white">
         <nav className="mx-auto max-w-6xl px-4 flex flex-1 items-center gap-8 py-2.5">
-          <span className="relative">
-            <Image
-              className="dark:hidden w-64"
-              src={logo}
-              alt="Google I/O Extended Cloud Hanoi 2024"
-            />
-            <Image
-              className="hidden dark:inline w-64"
-              src={logo_white}
-              alt="Google I/O Extended Cloud Hanoi 2024"
-            />
-          </span>
-          {/* <div className="max-lg:hidden h-6 w-px bg-zinc-950/10 dark:bg-white/10"></div> */}
+          <Link href={'/'}>
+            <span className="relative">
+              <Image
+                className="dark:hidden w-64"
+                src={logo}
+                alt="Google I/O Extended Cloud Hanoi 2024"
+              />
+              <Image
+                className="hidden dark:inline w-64"
+                src={logo_white}
+                alt="Google I/O Extended Cloud Hanoi 2024"
+              />
+            </span>
+          </Link>
+          <div className="max-lg:hidden h-6 w-px bg-zinc-950/10 dark:bg-white/10"></div>
           <div className="max-lg:hidden flex items-center gap-8">
-            {/* <span className="relative">
-              <Link href="#">Explore</Link>
+            <span className="relative">
+              <Link href="#info">Thông tin</Link>
             </span>
             <span className="relative">
-              <Link href="#">Community</Link>
+              <Link href="#">Lịch trình</Link>
             </span>
             <span className="relative">
-              <Link href="#">About</Link>
-            </span> */}
+              <Link href="#">Diễn giả</Link>
+            </span>
+            <span className="relative">
+              <Link href="#">Tham gia</Link>
+            </span>
+            <span className="relative">
+              <Link href="#">Liên hệ</Link>
+            </span>
           </div>
           <div className="-ml-4 flex-1"></div>
-          <div className="flex items-center">
-            <Button>
-              <TicketIcon />
-              Đăng ký
-            </Button>
+          <div className="flex items-center gap-4">
+            <ThemeSwitcher />
           </div>
         </nav>
       </div>
@@ -62,12 +68,15 @@ export default function Home() {
       <main>
         {/* Hero Section */}
         <div className="mx-auto max-w-6xl flex flex-col md:flex-row overflow-hidden bg-grey-bg dark:bg-grey border-b-[1px] md:border-b-2 border-grey dark:border-grey-bg">
-          <div className="flex flex-col md:justify-center px-8 py-5 w-full md:w-2/5 md:p-10 md:pr-0 dark:text-white z-10 text-center md:text-left items-center md:items-start">
+          <div className="flex flex-col md:justify-center px-8 py-16 w-full md:w-2/5 md:p-10 md:pr-0 dark:text-white z-10 text-center md:text-left items-center md:items-start">
             <h1 className="text-2xl sm:text-4xl font-semibold mb-4 sm:s-h3 md:l-h1-2">
-              Cùng cập nhật những công nghệ mới nhất về Cloud, AI và ML từ Google I/O
+              Cùng cập nhật những công nghệ mới nhất về Cloud, AI và ML từ
+              Google I/O
             </h1>
             <p className="font-normal text-justify sm:s-h6 md:l-h6 mb-4">
-              Tại sự kiện Google I/O Extended Cloud Hanoi 2024, phiên bản mở rộng của sự kiện Google I/O dành cho các lập trình viên và những người yêu thích công nghệ tại Việt Nam.
+              Tại sự kiện Google I/O Extended Cloud Hanoi 2024, phiên bản mở
+              rộng của sự kiện Google I/O dành cho các lập trình viên và những
+              người yêu thích công nghệ tại Việt Nam.
             </p>
             <Button>
               <TicketIcon />
@@ -98,38 +107,40 @@ export default function Home() {
           </div>
         </div>
         {/* End Hero Section */}
-        <div className="rounded-4xl bg-neutral-950 dark:bg-slate-50 py-20 sm:py-32">
+        <div className="rounded-4xl bg-neutral-900 py-20 sm:py-32">
           <div className="mx-auto max-w-6xl px-8">
             <div className="flex items-center gap-x-8">
-              <h2 className="text-center font-display text-sm font-semibold tracking-wider text-white dark:text-zinc-900 sm:text-left">
+              <h2 className="text-center font-display text-sm font-semibold tracking-wider text-white sm:text-left">
                 Đồng hành cùng chúng tôi
               </h2>
               <div className="h-px flex-auto bg-neutral-800"></div>
             </div>
             <div>
               <ul className="mt-10 grid grid-cols-2 gap-x-8 gap-y-10 lg:grid-cols-4">
-                {Array.from({ length: 8 }, (_, i) => (
+                {Array.from({ length: 7 }, (_, i) => (
                   <li key={i}>
                     <span className="relative">
                       <Image
-                        className="dark:hidden w-64"
+                        className="w-64"
                         src={logo_white}
-                        alt="Google I/O Extended Cloud Hanoi 2024"
-                      />
-                      <Image
-                        className="hidden dark:inline w-64"
-                        src={logo}
                         alt="Google I/O Extended Cloud Hanoi 2024"
                       />
                     </span>
                   </li>
                 ))}
+                <li key={8} className='justify-center items-center'>
+                    <span className="relative text-white font-bold w-64">
+                      Salonpas
+                    </span>
+                  </li>
               </ul>
             </div>
           </div>
         </div>
 
-        <div className="mx-auto max-w-6xl px-8 mt-24 sm:mt-32 lg:mt-40 text-neutral-950 dark:text-gray-50">
+        <div
+          id="info"
+          className="mx-auto max-w-6xl px-8 mt-24 sm:mt-32 lg:mt-40 text-neutral-950 dark:text-gray-50">
           <h2>
             <span className="block font-display tracking-tight [text-wrap:balance] text-4xl font-medium sm:text-5xl">
               Hẹn gặp bạn
@@ -140,15 +151,17 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 mt-16">
             <div className="flex">
-              <article className="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition bg-neutral-50 hover:bg-white dark:bg-zinc-900 dark:hover:bg-zinc-800 sm:p-8">
-                <MapPinIcon className="w-8" />
-                <p className="mt-6 font-display text-2xl font-semibold ">
-                  Hội trường A2, Học viện Công nghệ Bưu chính viễn thông
-                </p>
-                <p className="mt-4 text-base">
-                  Km 10 đường Nguyễn Trãi, P.Mộ Lao, Q.Hà Đông, Hà Nội
-                </p>
-              </article>
+              <Link href={'https://maps.app.goo.gl/G2hxgtVqWbVGmb5R9'} rel="noopener noreferrer" target="_blank">
+                <article className="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition bg-neutral-50 hover:bg-white dark:bg-zinc-900 dark:hover:bg-zinc-800 sm:p-8">
+                  <MapPinIcon className="w-8" />
+                  <p className="mt-6 font-display text-2xl font-semibold ">
+                    Hội trường A2, Học viện Công nghệ Bưu chính viễn thông
+                  </p>
+                  <p className="mt-4 text-base">
+                    96A Đường Trần Phú, P. Mộ Lao, Hà Đông, Hà Nội
+                  </p>
+                </article>
+              </Link>
             </div>
             <div className="flex">
               <article className="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition bg-neutral-50 hover:bg-white dark:bg-zinc-900 dark:hover:bg-zinc-800 sm:p-8">
@@ -177,7 +190,7 @@ export default function Home() {
       </main>
       <footer className="mt-24 sm:mt-32 lg:mt-40 pt-10 pb-16 lg:py-10 px-7 lg:px-16 bg-black flex flex-col lg:flex-row lg:justify-between lg:items-center w-max-full">
         <div className="flex flex-col lg:flex-row items-start lg:items-center space-y-6 lg:space-y-0 lg:space-x-6 text-grey-500 text-[16px] font-medium flex-1">
-          <div className="text-2xl font-semibold lg:mr-6 text-grey-500 flex justify-between w-full mb-4 lg:mb-0 lg:w-auto items-center">
+          <div className="text-2xl font-semibold lg:mr-6 text-grey-500 flex justify-center lg:justify-between w-full mb-4 lg:mb-0 lg:w-auto items-center">
             <Image
               className="w-32"
               src={googlefordevelopers}
@@ -185,7 +198,7 @@ export default function Home() {
             />
           </div>
         </div>
-        <div className="flex lg:justify-self-end lg:justify-end mt-12 lg:mt-0 text-slate-200">
+        <div className="flex items-center justify-center lg:justify-self-end lg:justify-end mt-8 lg:mt-0 text-slate-200">
           <Link href="#" className="p-3">
             Facebook
           </Link>

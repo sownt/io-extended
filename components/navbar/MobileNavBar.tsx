@@ -11,6 +11,7 @@ import logo from '@/public/logo.png';
 import logo_white from '@/public/logo_white.png';
 import Image from 'next/image';
 import Link from 'next/link';
+import ThemeSwitcher from '../ThemeSwitcher';
 
 export default function MobileNavBar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,7 +26,20 @@ export default function MobileNavBar() {
           </Button>
         </span>
       </div>
+      <span className="w-32 inline-grid shrink-0 align-middle *:col-start-1 *:row-start-1">
+        <Image
+          className="dark:hidden w-64"
+          src={logo}
+          alt="Google I/O Extended Cloud Hanoi 2024"
+        />
+        <Image
+          className="hidden dark:inline w-64"
+          src={logo_white}
+          alt="Google I/O Extended Cloud Hanoi 2024"
+        />
+      </span> 
       <div className="flex-1"></div>
+      <ThemeSwitcher />
       <Dialog
         open={isOpen}
         onClose={() => setIsOpen(false)}
@@ -39,18 +53,6 @@ export default function MobileNavBar() {
               {/* Header */}
               <div className="flex flex-col border-b border-zinc-950/5 p-4 dark:border-white/5 [&>[data-slot=section]+[data-slot=section]]:mt-2.5">
                 <div className="cursor-default flex w-full items-center gap-3 rounded-lg px-2 py-2.5 text-left text-base/6 font-medium text-zinc-950 sm:py-2 sm:text-sm/5 data-[slot=icon]:*:size-6 data-[slot=icon]:*:shrink-0 data-[slot=icon]:*:fill-zinc-500 sm:data-[slot=icon]:*:size-5 data-[slot=icon]:last:*:ml-auto data-[slot=icon]:last:*:size-5 sm:data-[slot=icon]:last:*:size-4 data-[slot=avatar]:*:-m-0.5 data-[slot=avatar]:*:size-7 data-[slot=avatar]:*:[--ring-opacity:10%] sm:data-[slot=avatar]:*:size-6 data-[hover]:bg-zinc-950/5 data-[slot=icon]:*:data-[hover]:fill-zinc-950 data-[active]:bg-zinc-950/5 data-[slot=icon]:*:data-[active]:fill-zinc-950 data-[slot=icon]:*:data-[current]:fill-zinc-950 dark:text-white dark:data-[slot=icon]:*:fill-zinc-400 dark:data-[hover]:bg-white/5 dark:data-[slot=icon]:*:data-[hover]:fill-white dark:data-[active]:bg-white/5 dark:data-[slot=icon]:*:data-[active]:fill-white dark:data-[slot=icon]:*:data-[current]:fill-white">
-                  <span className="w-32 inline-grid shrink-0 align-middle *:col-start-1 *:row-start-1">
-                    <Image
-                      className="dark:hidden w-64"
-                      src={logo}
-                      alt="Google I/O Extended Cloud Hanoi 2024"
-                    />
-                    <Image
-                      className="hidden dark:inline w-64"
-                      src={logo_white}
-                      alt="Google I/O Extended Cloud Hanoi 2024"
-                    />
-                  </span>
                   <span className="truncate flex-grow"></span>
                   <span className="relative">
                     <Button
