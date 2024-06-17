@@ -117,7 +117,7 @@ export default function Home() {
             </div>
             <div>
               <ul className="mt-10 grid grid-cols-2 gap-x-8 gap-y-10 lg:grid-cols-4">
-                {Array.from({ length: 7 }, (_, i) => (
+                {Array.from({ length: 8 }, (_, i) => (
                   <li key={i}>
                     <span className="relative">
                       <Image
@@ -128,11 +128,6 @@ export default function Home() {
                     </span>
                   </li>
                 ))}
-                <li key={8} className='justify-center items-center'>
-                    <span className="relative text-white font-bold w-64">
-                      Salonpas
-                    </span>
-                  </li>
               </ul>
             </div>
           </div>
@@ -151,7 +146,10 @@ export default function Home() {
           </div>
           <div className="grid grid-cols-1 gap-8 lg:grid-cols-3 mt-16">
             <div className="flex">
-              <Link href={'https://maps.app.goo.gl/G2hxgtVqWbVGmb5R9'} rel="noopener noreferrer" target="_blank">
+              <Link
+                href={'https://maps.app.goo.gl/G2hxgtVqWbVGmb5R9'}
+                rel="noopener noreferrer"
+                target="_blank">
                 <article className="relative flex w-full flex-col rounded-3xl p-6 ring-1 ring-neutral-950/5 transition bg-neutral-50 hover:bg-white dark:bg-zinc-900 dark:hover:bg-zinc-800 sm:p-8">
                   <MapPinIcon className="w-8" />
                   <p className="mt-6 font-display text-2xl font-semibold ">
