@@ -3,7 +3,6 @@ import Image from 'next/image';
 import logo from '@/public/logo.png';
 import logo_white from '@/public/logo_white.png';
 import ThemeSwitcher from '@/components/ThemeSwitcher';
-import DefaultRoutes from './DefaultRoutes';
 export default function NavBar() {
   return (
     <div className="inset-x-0 top-0 max-lg:hidden dark:text-white">
@@ -24,7 +23,21 @@ export default function NavBar() {
         </Link>
         <div className="max-lg:hidden h-6 w-px bg-zinc-950/10 dark:bg-white/10"></div>
         <div className="max-lg:hidden flex items-center gap-8">
-          <DefaultRoutes />
+          <span className="relative">
+            <Link href="#info">Thông tin</Link>
+          </span>
+          <span className="relative">
+            <Link href="#agenda">Lịch trình</Link>
+          </span>
+          <span className="relative">
+            <Link href="#speakers">Diễn giả</Link>
+          </span>
+          <span className="relative">
+            <Link href="#joinus">Tham gia</Link>
+          </span>
+          <span className="relative">
+            <Link href="#contacts">Liên hệ</Link>
+          </span>
         </div>
         <div className="-ml-4 flex-1"></div>
         <div className="flex items-center gap-4">

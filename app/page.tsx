@@ -148,7 +148,7 @@ export default function Home() {
           </div>
         </div>
 
-        <div className="flex mx-auto max-w-6xl">
+        <div className="flex flex-col md:flex-row mx-auto max-w-6xl">
           <div className="flex flex-1">
             <Image
               src={hero_mobile}
@@ -158,7 +158,7 @@ export default function Home() {
             <Image
               src={hero_mobile_dark}
               alt="Hero image"
-              className="dark:inline-block dark:md:hidden w-full mt-[60px]"
+              className="hidden dark:inline-block dark:md:hidden w-full mt-[60px]"
             />
           </div>
           <div
